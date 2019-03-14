@@ -1,0 +1,31 @@
+context: kops.peelmicro.com # kube-context (--kube-context)
+
+releases:
+  # Published chart example
+  - name: grafana-course-deploy # name of this release
+    namespace: prometheus # target namespace
+    chart: stable/grafana # repository/chart` syntax
+    values:
+      - grafana/values.yaml # value files (--values)
+
+  # Published chart example
+  - name: prometheus-course-deploy # name of this release
+    namespace: prometheus # target namespace
+    chart: stable/prometheus # repository/chart` syntax
+    values:
+      - prometheus/values.yaml # value files (--values)
+
+  # DokuWiki Helmfile specification
+  - name: dokuwiki-course-deploy # name of this release
+    namespace: doku # target namespace
+    chart: stable/dokuwiki # repository/chart` syntax
+    values:
+      - dokuwiki/values.yaml # value files (--values)
+
+  # nginx-ingress Helmfile specification
+  - name: nginx-course-deploy # name of this release
+    namespace: ingress # target namespace
+    chart: stable/nginx-ingress # repository/chart` syntax
+    values:
+      - nginx-ingress/values.yaml # value files (--values)
+

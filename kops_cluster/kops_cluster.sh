@@ -1,0 +1,13 @@
+kops create cluster \
+  --name=kops.peelmicro.com \
+  --state=s3://kops.peelmicro.com \
+  --authorization RBAC \
+  --zones=eu-central-1a \
+  --node-count=2 \
+  --node-size=t2.micro \
+  --master-size=t2.micro \
+  --master-count=1 \
+  --dns-zone=kops.peelmicro.com \
+  --out=devopsinuse_terraform \
+  --target=terraform \
+  --ssh-public-key=~/.ssh/udemy_devopsinuse.pub
